@@ -1,10 +1,3 @@
-Proyecto De Papeleria , para el seguimiento y control de articulos de papeleria
-
-usa la migracion de usa, poner en consola :
-"yii migrate"
-Para generar las tablas necesarias
-
-
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
