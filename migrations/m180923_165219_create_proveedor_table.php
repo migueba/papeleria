@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `proveedor`.
  */
-class m180923_184604_create_proveedor_table extends Migration
+class m180924_034913_create_proveedor_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -14,10 +14,11 @@ class m180923_184604_create_proveedor_table extends Migration
     {
         $this->createTable('proveedor', [
             'idproveedor' => $this->primaryKey(),
-            'clave_proveedor' => $this->integer()->notNull(),
+            'clave_proveedor' => $this->integer()->notNull()->unique(),
             'proveedor' => $this->string(80)->notNull(),
-            'Correo' => $this->string(45),
+            'correo' => $this->string(45),
             'telefono' => $this->string(45),
+            'estatus' => "ENUM('Activo', 'Inactivo')",
         ]);
     }
 
