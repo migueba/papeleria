@@ -15,9 +15,9 @@ class m180923_165712_create_productos_table extends Migration
         $this->createTable('productos', [
             'idproductos' => $this->primaryKey(),
             'descripcion' => $this->string(80)->notNull(),
-            'inv_inicial' => $this->integer(),
-            'inv_final' => $this->integer(),
-            'unidad_medida_idunidad_medida' => $this->integer(),
+            'inv_inicial' => $this->integer()->defaultExpression(0),
+            'inv_final' => $this->integer()->defaultExpression(0),
+            'unidad_medida_idunidad_medida' => $this->integer()->defaultExpression(0),
         ]);
 
       // add foreign key for table `unidad_medida`
@@ -29,6 +29,12 @@ class m180923_165712_create_productos_table extends Migration
           'idunidad_medida',
           'CASCADE'
       );
+
+      $this->insert('productor',array(
+          'descripcion' => 'Producto Prueba',
+          'inv_final' => '10',
+          'unidad_medida_idunidad_medida' => '2'
+      ));
     }
 
     /**

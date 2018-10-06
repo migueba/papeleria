@@ -20,6 +20,15 @@ class m180924_034913_create_proveedor_table extends Migration
             'telefono' => $this->string(45),
             'estatus' => "ENUM('Activo', 'Inactivo')",
         ]);
+
+        // insert for table `unidad_medida`
+        $this->insert('proveedor',array(
+          'clave_proveedor' => '200000',
+          'proveedor' => 'Proveedor de Prueba',
+          'correo' => 'prueba@pruebas.com',
+          'telefono' => '222-22-2-22-22',
+          'estatus' => 'Activo'
+        ));
     }
 
     /**
